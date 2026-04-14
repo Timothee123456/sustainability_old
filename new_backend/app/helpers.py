@@ -64,3 +64,13 @@ def find_all_info(date):
 
 
     return json.dumps(return_data, indent=4)
+
+#######################################################################
+
+data_sheet = client.open_by_url('https://docs.google.com/spreadsheets/d/18PKyGEufH3nxx-YLQ1vNPgIE7TX8EQAl20VobDY6_KQ/')
+def store_data(data):
+    # Assumes data is a string or simple value to store in first column (A)
+    # Finds the next available row by checking column A
+    col_a = datasheet.col_values(1)
+    next_row = len(col_a) + 1
+    datasheet.update(f'A{next_row}', data)[web:2][web:6]
